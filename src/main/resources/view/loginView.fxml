@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="394.0" prefWidth="422.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginView">
    <children>
       <Label alignment="CENTER_RIGHT" layoutX="91.0" layoutY="24.0" text="PANEL  LOGOWANIA" textFill="#076f2b">
@@ -21,6 +20,6 @@
       <Button alignment="CENTER" layoutX="227.0" layoutY="295.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: green;" text="Zaloguj" textFill="#f5f0f0" />
       <Button layoutX="227.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Zarejestruj" textFill="#fcf9f9" />
       <TextField fx:id="tfLogin" layoutX="178.0" layoutY="129.0" promptText="login" />
-      <Label fx:id="lblInfo" layoutX="125.0" layoutY="238.0" prefHeight="21.0" prefWidth="301.0" text="Label" />
+      <Label fx:id="lblInfo" layoutX="125.0" layoutY="238.0" prefHeight="21.0" prefWidth="301.0" style="-fx-background-color: lightblue;" />
    </children>
 </AnchorPane>
