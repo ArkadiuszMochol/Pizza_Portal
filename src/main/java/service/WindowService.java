@@ -1,8 +1,10 @@
 package service;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 
@@ -17,4 +19,18 @@ public class WindowService {
         stage.setResizable(false);
         stage.show();
     }
+    public void closeWindow(Node node){
+        Stage stageToClose = (Stage) node.getScene().getWindow();
+        stageToClose.close();
+    }
+    public static void getAlertWindow(Alert.AlertType alertType, String title, String header, String content){
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.show();
+    }
+
+
+
 }
