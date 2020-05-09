@@ -9,8 +9,5 @@
         <module name="Pizza_Portal_Own" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Pizza_Portal_Own" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

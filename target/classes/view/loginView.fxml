@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onKeyPressed="#keyLoginAction" prefHeight="394.0" prefWidth="422.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginView">
+<AnchorPane prefHeight="394.0" prefWidth="422.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginView">
    <children>
       <Label alignment="CENTER_RIGHT" layoutX="91.0" layoutY="24.0" text="PANEL  LOGOWANIA" textFill="#076f2b">
          <font>
