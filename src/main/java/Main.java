@@ -1,20 +1,21 @@
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import service.FileService;
 
-import static javafx.application.Application.launch;
-
-public class Main extends Exception {
-    //@Override
+public class Main extends Application {
+   @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/view/loginView.fxml"));
-        primaryStage.setTitle("panel logowania");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
-        primaryStage.show();
-        //FileService.selectUsers();
-        //FileService.selectBaskets();
+       Parent root = FXMLLoader.load(getClass().getResource("/view/loginView.fxml"));
+       primaryStage.setTitle("panel logowania");
+       primaryStage.setScene(new Scene(root));
+       primaryStage.setResizable(false);           // blokowanie zmiany rozmiaru okna
+       primaryStage.show();
+       // aktualizacja listy users
+       FileService.selectUsers();
+       //FileService.selectBasket();
 
     }
 

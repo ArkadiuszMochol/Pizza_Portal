@@ -1,15 +1,15 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import jdk.jfr.Label;
 import service.LoginService;
 import service.WindowService;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class LoginController {
@@ -37,7 +37,14 @@ public class LoginController {
 
     @FXML
     void registerAction(ActionEvent event) throws IOException {
-        windowService.createWindow()
-
+        windowService.createWindow("registrationView", "panel rejestracji");
+        windowService.closeWindow(lblInfo);
     }
+
+    public void initialize() {
+        loginService = new LoginService();
+        windowService = new WindowService();
+    }
+
+
 }

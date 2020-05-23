@@ -1,11 +1,11 @@
 package service;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import jdk.jfr.Label;
+import javafx.scene.control.TextField;
 import model.User;
 import utility.InMemoryDb;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -54,26 +54,37 @@ public class LoginService {
     }
 
     public static User loggedUser;
-
-    public void login(TextField tfLogin, PasswordField pfPassword, Label lblInfo) {
+    public void login(TextField tfLogin, PasswordField pfPassword, Label lblInfo)  {
         Optional<User> userOpt = loginUser(tfLogin.getText(), pfPassword.getText());
-        if (userOpt.isPresent()) {
-            if (userOpt.get().isStatus()) {
+        if(userOpt.isPresent() ){
+            if(userOpt.get().isStatus()) {
                 try {
+                    // obiekt aktualnie zalogowanego użytkownika
                     loggedUser = userOpt.get();
+                    // ---------------------------------------
                     lblInfo.setText("zalogowano");
-                    //WindowService windowService = new WindowService();
-
-
+                    WindowService windowService = new WindowService();
+                    // utworzenie okna Pizza Portal
+                    windowService.createWindow("pizzaPortalView", "Pizza Portal");
+                    // zamknięcie aktualnego okna
+                    windowService.closeWindow(lblInfo);
+                    clearLoginProbes(userOpt.get());
+                    FileService.updateUsers();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             } else {
-                lblInfo.setText("Twoje konto jest zablokowane");
+                lblInfo.setText("Twoje konto jest zabolokowane");
             }
-
-        } else {
-            //dekrementacja liczby prób logowania ...
+        } else{
+            // dekrementacja liczby prób logowani
+            decrementProbes(tfLogin.getText());
+            lblInfo.setText(getLoginProbes(tfLogin.getText()));
+            try {
+                FileService.updateUsers();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
     }
