@@ -40,7 +40,7 @@ public class RegistrationController {
 
     @FXML
     void registerAction(ActionEvent event) {
-        registrationService.registerAction(tfLogin, pfPassword, pfPasswordConfirmation,
+        registrationService.registration(tfLogin, pfPassword, pfPasswordConfirmation,
                 lblInfo, lblResult, lblEquation);
     }
 
